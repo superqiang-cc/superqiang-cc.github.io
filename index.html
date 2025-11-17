@@ -16,7 +16,16 @@
           width: 100%;        /* full width of carousel */
           object-fit: cover;  /* crop edges but keep aspect ratio */
       }
-</style>
+      #footer .row-fluid {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          gap: 40px; /* spacing between the 3 blocks */
+      }
+      #footer .span4 {
+          float: none !important;  /* disable Bootstrap 2 float */
+     }
+     </style>
    </head>
    <body>
       <div class="container">
