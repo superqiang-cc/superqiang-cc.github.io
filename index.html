@@ -16,6 +16,23 @@
           width: 100%;        /* full width of carousel */
           object-fit: cover;  /* crop edges but keep aspect ratio */
       }
+
+      /* Footer: center on big screens, stack on small screens */
+      #footer {
+          text-align: center;
+      }
+
+      /* Only on screens >= 768px (desktop / tablet) */
+      @media (min-width: 768px) {
+      #footer .row-fluid {
+          display: flex;
+          justify-content: center;
+          gap: 40px;              /* spacing between the 3 blocks */
+      }
+      #footer .span4 {
+          float: none !important; /* cancel Bootstrap's floats only on large screens */
+      }
+      }
      </style>
    </head>
    <body>
