@@ -10,6 +10,22 @@
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
       <link href="css/theme.css" rel="stylesheet">
+
+      <style>
+      .figure-right {
+        float: right;
+        width: 200px;          /* same as image width */
+        margin: 0 0 10px 20px; /* spacing from text */
+        text-align: center;    /* caption aligns with image */
+      }
+
+      .figure-right figcaption {
+        font-size: 13px;
+        color: #666;
+        margin-top: 6px;
+      }
+      </style>
+      
    </head>
    <body>
       <div class="container">
@@ -69,8 +85,14 @@
                         <section id="Modeling">
                            <h4>High-Resolution Urban Climate Modeling</h4>
                            <br/>
-                           <img src="research_images/modeling.png" class="float-right" alt="modeling" style="width: 200px; height: auto;">
-                           <p class="caption"> High-resolution heat distribution </p>
+                           <figure class="figure-right">
+                             <img src="research_images/modeling.png"
+                                  alt="modeling"
+                                  style="width: 200px; height: auto;">
+                             <figcaption>
+                               High-resolution heat distribution
+                             </figcaption>
+                           </figure>
                            <p style="text-align: justify; font-size: 15px; line-height: 1.4">
                               We develop and apply high-resolution urban climate models to simulate temperature, humidity, radiation, 
                               and airflow at neighborhood and street scales. By incorporating detailed urban morphology, land-use patterns, 
