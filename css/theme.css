@@ -55,28 +55,6 @@ body>.navbar {
 	font-size: 13px
 }
 
-<style>
-/* Default (desktop): keep one row */
-.nav {
-  white-space: nowrap;
-}
-
-/* Mobile screens: allow wrapping into multiple rows */
-@media (max-width: 767px) {
-  .navbar .nav {
-    white-space: normal;     /* allow wrapping */
-    display: flex;
-    flex-wrap: wrap;         /* enable multi-row */
-    justify-content: center; /* center items */
-  }
-
-  .navbar .nav > li {
-    float: none;             /* disable Bootstrap float */
-    margin: 4px 8px;         /* spacing between items */
-  }
-}
-</style>
-
 
 /* Change the docs' brand */
 
