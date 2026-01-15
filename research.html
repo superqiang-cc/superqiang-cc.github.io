@@ -24,6 +24,11 @@
         color: #666;
         margin-top: 6px;
       }
+         
+      .weather-center {
+        display: flex;
+        justify-content: center;
+      }
       </style>
       
    </head>
@@ -219,7 +224,9 @@
                </div>
                <div class="span6" style="text-align: center;">
                   <br>
-                  <div id="openweathermap-widget-11" style="text-align: center;"></div>
+                  <div class="weather-center">
+                    <div id="openweathermap-widget-11"></div>
+                  </div>
                   <script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script><script>window.myWidgetParam ? window.myWidgetParam : 
                   window.myWidgetParam = [];  window.myWidgetParam.push({id: 11,cityid: '2110683',appid: '86330aae1db031fa8507e41f14a7cf5a',units: 'metric',containerid: 'openweathermap-widget-11',  });  
                      (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>               </div>
