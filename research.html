@@ -29,6 +29,11 @@
         display: flex;
         justify-content: center;
       }
+         
+      #openweathermap-widget-11 {
+        transform: scale(0.85);     /* ← change this value */
+        transform-origin: top center;
+      }
 
       </style>
       
@@ -228,9 +233,8 @@
                   <div class="weather-center">
                     <div id="openweathermap-widget-11"></div>
                   </div>
-                  <script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script><script>window.myWidgetParam ? window.myWidgetParam : 
-                  window.myWidgetParam = [];  window.myWidgetParam.push({id: 11,cityid: '2110683',appid: '86330aae1db031fa8507e41f14a7cf5a',units: 'metric',containerid: 'openweathermap-widget-11',  });  
-                     (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>               </div>
+                  <script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script><script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 11,cityid: '2110683',appid: '86330aae1db031fa8507e41f14a7cf5a',units: 'metric',containerid: 'openweathermap-widget-11',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+               </div>
                <div class="span3">
                   <h3>Address</h3>
                   <p style="font-size: 15px; color: #C0C0C0;">Building 3F, No.3 Area, University of Tsukuba<br>
