@@ -292,17 +292,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
          });
       })();
-            var text = clone.textContent.replace(/\s+/g,' ').trim();
-            navigator.clipboard.writeText(text).then(function(){
-               btn.textContent = '✓ Copied!';
-               btn.classList.add('copied');
-               setTimeout(function(){
-                  btn.textContent = '📋 Cite';
-                  btn.classList.remove('copied');
-               }, 2000);
-            });
-         });
-      });
    </script>
    </body>
 </html>
