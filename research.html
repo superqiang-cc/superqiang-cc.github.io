@@ -8,6 +8,8 @@
       <meta name="author" content="Qiang Guo">
       <link rel="icon" type="image/png" href="index_images/logo.png">
       <!-- Le styles -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+
       <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -225,6 +227,19 @@
             </div>
          </div>
       </div>
+
+            <!-- ── Research Collaboration Map ────────────────────── -->
+            <section id="collab-map" data-aos="fade-up" style="margin-top: 10px;">
+               <div class="span9" style="margin-left: 0;">
+                  <h3 style="margin-bottom: 8px;">🌏 Global Research Collaboration</h3>
+                  <p style="color:#666; margin-bottom:10px; font-size:14px;">
+                     Click on a marker to learn more about each collaborating institution.
+                  </p>
+                  <div id="collab-map-container" style="width:100%; height:420px; border-radius:8px; border:1px solid #ddd; overflow:hidden;"></div>
+               </div>
+            </section>
+            <hr>
+
       <footer id="footer"  style="text-align: center;">
          <div class="container-fluid" style="text-align: center;">
             <div class="row-fluid" style="text-align: center;">
@@ -286,5 +301,85 @@
          });
       })();
    </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+   <script>
+   (function() {
+      var map = L.map('collab-map-container', {
+         center: [30, 20],
+         zoom: 2,
+         scrollWheelZoom: false
+      });
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
+         subdomains: 'abcd',
+         maxZoom: 19
+      }).addTo(map);
+
+      // Custom icons
+      function makeIcon(color) {
+         return L.divIcon({
+            className: '',
+            html: '<div style="width:14px;height:14px;background:'+color+';border:2.5px solid #fff;border-radius:50%;box-shadow:0 1px 5px rgba(0,0,0,0.4);"></div>',
+            iconSize: [14, 14],
+            iconAnchor: [7, 7],
+            popupAnchor: [0, -10]
+         });
+      }
+
+      var homeIcon = L.divIcon({
+         className: '',
+         html: '<div style="width:18px;height:18px;background:#e63946;border:3px solid #fff;border-radius:50%;box-shadow:0 1px 6px rgba(0,0,0,0.5);"></div>',
+         iconSize: [18, 18],
+         iconAnchor: [9, 9],
+         popupAnchor: [0, -12]
+      });
+
+      var partnerIcon = makeIcon('#2a9d8f');
+
+      // Home institution
+      L.marker([36.1083, 140.1011], {icon: homeIcon})
+        .addTo(map)
+        .bindPopup('<b>🏠 University of Tsukuba</b><br>Tsukuba, Japan<br><i>C2S Lab (Home)</i>');
+
+      // Collaborating institutions
+      var partners = [
+         { name: 'University of Tokyo', city: 'Tokyo, Japan', lat: 35.7128, lng: 139.7617 },
+         { name: 'Nagasaki University', city: 'Nagasaki, Japan', lat: 32.7503, lng: 129.8779 },
+         { name: 'National Institute for Environmental Studies', city: 'Tsukuba, Japan', lat: 36.0548, lng: 140.1233 },
+         { name: 'Wuhan University', city: 'Wuhan, China', lat: 30.5428, lng: 114.3590 },
+         { name: 'National University of Singapore', city: 'Singapore', lat: 1.2966, lng: 103.7764 },
+         { name: 'Nanyang Technological University', city: 'Singapore', lat: 1.3483, lng: 103.6831 },
+         { name: 'Griffith University', city: 'Brisbane, Australia', lat: -27.5598, lng: 153.0398 },
+         { name: 'KAIST', city: 'Daejeon, South Korea', lat: 36.3724, lng: 127.3596 },
+         { name: 'Stanford University', city: 'California, USA', lat: 37.4275, lng: -122.1697 },
+         { name: 'Princeton University', city: 'New Jersey, USA', lat: 40.3431, lng: -74.6551 },
+         { name: 'University of Illinois Urbana-Champaign', city: 'Illinois, USA', lat: 40.1020, lng: -88.2272 },
+         { name: 'Hong Kong Polytechnic University', city: 'Hong Kong', lat: 22.3036, lng: 114.1798 },
+         { name: 'University of Hong Kong', city: 'Hong Kong', lat: 22.2839, lng: 114.1364 },
+         { name: 'University of Oxford', city: 'Oxford, UK', lat: 51.7548, lng: -1.2544 },
+         { name: 'London School of Hygiene & Tropical Medicine', city: 'London, UK', lat: 51.5207, lng: -0.1294 }
+      ];
+
+      partners.forEach(function(p) {
+         L.marker([p.lat, p.lng], {icon: partnerIcon})
+           .addTo(map)
+           .bindPopup('<b>' + p.name + '</b><br>' + p.city);
+      });
+
+      // Legend
+      var legend = L.control({position: 'bottomright'});
+      legend.onAdd = function() {
+         var div = L.DomUtil.create('div');
+         div.style.cssText = 'background:#fff;padding:8px 12px;border-radius:6px;box-shadow:0 1px 5px rgba(0,0,0,0.25);font-size:12px;line-height:1.8;';
+         div.innerHTML =
+            '<span style="display:inline-block;width:12px;height:12px;background:#e63946;border-radius:50%;margin-right:6px;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.3);"></span>C2S Lab (Tsukuba)<br>' +
+            '<span style="display:inline-block;width:12px;height:12px;background:#2a9d8f;border-radius:50%;margin-right:6px;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.3);"></span>Collaborating Institutions';
+         return div;
+      };
+      legend.addTo(map);
+   })();
+   </script>
+
    </body>
 </html>
