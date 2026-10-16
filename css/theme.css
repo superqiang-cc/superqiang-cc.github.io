@@ -605,3 +605,45 @@ ul.sponsors {
 	color: #fff;
 	border-color: #5cb85c;
 }
+
+/* ── Mobile navbar hamburger ──────────────────── */
+.btn-navbar {
+	display: none;
+	float: right;
+	margin: 8px 0 8px 10px;
+	padding: 7px 10px;
+	background: #30393C;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.btn-navbar .icon-bar {
+	display: block;
+	width: 22px;
+	height: 2px;
+	background: #fff;
+	border-radius: 1px;
+	margin: 4px 0;
+}
+@media (max-width: 767px) {
+	.btn-navbar { display: block; }
+	.nav-collapse { clear: both; }
+	.nav-collapse.collapse { display: none !important; height: 0 !important; }
+	.nav-collapse.in { display: block !important; height: auto !important; }
+	.nav-collapse ul.nav {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.nav-collapse ul.nav li {
+		display: block;
+		float: none;
+		width: 100%;
+	}
+	.nav-collapse ul.nav li a {
+		display: block;
+		padding: 10px 15px;
+		border-bottom: 1px solid #eee;
+	}
+}
