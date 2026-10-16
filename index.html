@@ -285,11 +285,7 @@
       }
 
       var homeIcon = makeIcon('#e63946', 14);
-      var partnerIcon = makeIcon('#2a9d8f', 10);
-
-      L.marker([36.1083, 140.1011], {icon: homeIcon})
-        .addTo(map)
-        .bindPopup('<b>🏠 University of Tsukuba</b><br>Tsukuba, Japan<br><i>C2S Lab (Home)</i>');
+      var partnerIcon = makeIcon('#2a9d8f', 8);
 
       var partners = [
          { name: 'University of Tokyo', city: 'Tokyo, Japan', lat: 35.7128, lng: 139.7617 },
@@ -320,13 +316,18 @@
            .bindPopup('<b>' + p.name + '</b><br>' + p.city);
       });
 
+      // Home marker added last so it renders on top of all partner dots
+      L.marker([36.1083, 140.1011], {icon: homeIcon, zIndexOffset: 1000})
+        .addTo(map)
+        .bindPopup('<b>🏠 University of Tsukuba</b><br>Tsukuba, Japan<br><i>C2S Lab (Home)</i>');
+
       var legend = L.control({position: 'bottomright'});
       legend.onAdd = function() {
          var div = L.DomUtil.create('div');
          div.style.cssText = 'background:#fff;padding:6px 10px;border-radius:6px;box-shadow:0 1px 5px rgba(0,0,0,0.25);font-size:11px;line-height:1.9;';
          div.innerHTML =
             '<span style="display:inline-block;width:10px;height:10px;background:#e63946;border-radius:50%;margin-right:5px;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.3);vertical-align:middle;"></span>C2S Lab<br>' +
-            '<span style="display:inline-block;width:10px;height:10px;background:#2a9d8f;border-radius:50%;margin-right:5px;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.3);vertical-align:middle;"></span>Collaborating Institutions';
+            '<span style="display:inline-block;width:8px;height:8px;background:#2a9d8f;border-radius:50%;margin-right:5px;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.3);vertical-align:middle;"></span>Collaborating Institutions';
          return div;
       };
       legend.addTo(map);
