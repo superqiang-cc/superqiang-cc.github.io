@@ -272,8 +272,8 @@
          zoomDelta: 0.5
       });
 
-      // Fit to show the whole collaboration area
-      map.fitBounds([[-40, -130], [60, 150]]);
+      // Fixed initial view: zoom 2 fills the container width with no grey edges
+      map.setView([25, 10], 2);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
          attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
