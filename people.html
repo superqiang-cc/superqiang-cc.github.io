@@ -8,6 +8,7 @@
       <meta name="author" content="Qiang Guo">
       <link rel="icon" type="image/png" href="index_images/logo.png">
       <!-- Le styles -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
       <link href="css/theme.css" rel="stylesheet">
@@ -60,11 +61,11 @@
             
             <!-- PI -->
             <div class="span8 offset1">
-               <section id="principalinvestigator">
+               <section id="principalinvestigator" data-aos="fade-up">
                   <div class="page-header">
                      <h3>Principal Investigator</h3>
                   </div>
-                  <div class="row-fluid">
+                  <div class="row-fluid" data-aos="fade-up">
                      <div class="span3">
                         <img src="people_images/Qiang_Guo.png" alt="Qiang Guo"/>
                      </div>
@@ -88,12 +89,12 @@
                <hr>
 
                <!-- Researcher -->
-               <section id="researcher">
+               <section id="researcher" data-aos="fade-up">
                   <div class="page-header">
                      <h3>Researcher</h3>
                   </div>
                   
-                  <div class="row-fluid">
+                  <div class="row-fluid" data-aos="fade-up">
                      <div class="span3">
                         <img src="people_images/Researcher.png" alt="Researcher"/>
                      </div>
@@ -108,12 +109,12 @@
                <hr>
 
                <!-- PhD -->
-               <section id="phd">
+               <section id="phd" data-aos="fade-up">
                   <div class="page-header">
                      <h3>PhD Students</h3>
                   </div>
                   
-                  <div class="row-fluid">
+                  <div class="row-fluid" data-aos="fade-up">
                      <div class="span3">
                         <img src="people_images/PhD.png" alt="PhD"/>
                      </div>
@@ -129,12 +130,12 @@
 
 
                <!-- Master -->
-               <section id="master">
+               <section id="master" data-aos="fade-up">
                   <div class="page-header">
                      <h3>Master Students</h3>
                   </div>
                   
-                  <div class="row-fluid">
+                  <div class="row-fluid" data-aos="fade-up">
                      <div class="span3">
                         <img src="people_images/Haiyu_Gong.jpg" alt="Master"/>
                      </div>
@@ -181,12 +182,12 @@
                <hr>
 
                <!-- Undergraduate -->
-               <section id="undergraduate">
+               <section id="undergraduate" data-aos="fade-up">
                   <div class="page-header">
                      <h3>Undergraduate Students</h3>
                   </div>
                   
-                  <div class="row-fluid">
+                  <div class="row-fluid" data-aos="fade-up">
                      <div class="span3">
                         <img src="people_images/Masashi_Umezono.jpg" alt="Undergraduate"/>
                      </div>
@@ -235,6 +236,10 @@
          </div>
       </footer>
 
+
+   <!-- Back to Top -->
+   <a href="#" id="back-to-top" title="Back to top">↑</a>
+
       <!-- Le javascript
          ================================================== -->
       <!-- Placed at the end of the document so the pages load faster -->
@@ -248,5 +253,20 @@
          });
          
       </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+   <script>
+      AOS.init({ duration: 700, once: true, offset: 80 });
+      // ── Back to Top ──
+      (function(){
+         var btn = document.getElementById('back-to-top');
+         window.addEventListener('scroll', function(){
+            btn.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+         });
+         btn.addEventListener('click', function(e){
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+         });
+      })();
+   </script>
    </body>
 </html>

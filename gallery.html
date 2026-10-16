@@ -8,6 +8,7 @@
       <meta name="author" content="Qiang Guo">
       <link rel="icon" type="image/png" href="index_images/logo.png">
       <!-- Le styles -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
       <link href="css/theme.css" rel="stylesheet">
@@ -65,14 +66,14 @@
                </ul>
             </div>
             <div class="span8 offset1">
-               <section id="2026">
+               <section id="2026" data-aos="fade-up">
                   <div class="page-header">
                      <h3>2026</h3>
                   </div>
                   <div class="row-fluid">
                      <ul class="thumbnails da-thumbs" id="imagegallery1">
 
-                        <li class="span5">
+                        <li class="span5" data-aos="fade-up">
                            <a title="2026_APN"  href="gallery_images/2026_APN.JPG" class="thumbnail" >
                            <img alt="" src="gallery_images/2026_APN.JPG" style="width: auto; height: 125px;">            
                            </a>
@@ -87,21 +88,21 @@
                   
                </section>
                
-               <section id="2025">
+               <section id="2025" data-aos="fade-up">
                   <div class="page-header">
                      <h3>2025</h3>
                   </div>
                   
                   <div class="row-fluid">
                      <ul class="thumbnails da-thumbs" id="imagegallery2">
-                        <li class="span5">
+                        <li class="span5" data-aos="fade-up">
                            <a title="2025_Heat_Symposium"  href="gallery_images/2025_Heat_Early_Warning_System_Symposium_Brisbane.jpg" class="thumbnail" >
                            <img alt="" src="gallery_images/2025_Heat_Early_Warning_System_Symposium_Brisbane.jpg" style="width: auto; height: 125px;">            
                            </a>
                            <p class="caption"> <b>2025.08</b>, Heat Early Warning System Symposium, Griffith University, Brisbane </p>
                         </li>
                         
-                        <li class="span4">
+                        <li class="span4" data-aos="fade-up">
                            <a title="2025_AOGS" href="gallery_images/2025_AOGS_Singapore.jpg" class="thumbnail" >
                            <img alt="" src="gallery_images/2025_AOGS_Singapore.jpg" style="width: auto; height: 125px;">
                            </a>
@@ -145,6 +146,10 @@
          </div>
       </footer>
 
+
+   <!-- Back to Top -->
+   <a href="#" id="back-to-top" title="Back to top">↑</a>
+
       <!-- Le javascript
          ================================================== -->
       <!-- Placed at the end of the document so the pages load faster -->
@@ -177,5 +182,20 @@
           blueimp.Gallery(links, options);
          };        
       </script>  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+   <script>
+      AOS.init({ duration: 700, once: true, offset: 80 });
+      // ── Back to Top ──
+      (function(){
+         var btn = document.getElementById('back-to-top');
+         window.addEventListener('scroll', function(){
+            btn.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+         });
+         btn.addEventListener('click', function(e){
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+         });
+      })();
+   </script>
    </body>
 </html>

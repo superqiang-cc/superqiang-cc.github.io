@@ -8,6 +8,7 @@
       <meta name="author" content="Qiang Guo">
       <link rel="icon" type="image/png" href="index_images/logo.png">
       <!-- Le styles -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
       <link href="css/theme.css" rel="stylesheet">
@@ -50,7 +51,7 @@
             
             <div class="row-fluid post_row">
 
-				<div class="span6 post">
+				<div class="span6 post" data-aos="fade-up">
                   <div class="text">
                      <h5>Yihao Cao Presented in Urban Heat Island Conference</h5>
                      <br/>
@@ -69,7 +70,7 @@
                   </div>
                </div>
                
-               <div class="span6 post">
+               <div class="span6 post" data-aos="fade-up">
                   <div class="text">
                      <h5>Prof. Tao Huang visited C2S</h5>
                      <br/>
@@ -122,6 +123,10 @@
          </div>
       </footer>
 
+
+   <!-- Back to Top -->
+   <a href="#" id="back-to-top" title="Back to top">↑</a>
+
       <!-- Le javascript
          ================================================== -->
       <!-- Placed at the end of the document so the pages load faster -->
@@ -134,5 +139,20 @@
              });
          });
       </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+   <script>
+      AOS.init({ duration: 700, once: true, offset: 80 });
+      // ── Back to Top ──
+      (function(){
+         var btn = document.getElementById('back-to-top');
+         window.addEventListener('scroll', function(){
+            btn.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+         });
+         btn.addEventListener('click', function(e){
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+         });
+      })();
+   </script>
    </body>
 </html>

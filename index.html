@@ -13,6 +13,7 @@
       <meta property="og:url" content="https://superqiang-cc.github.io/">
       <meta property="og:image" content="https://superqiang-cc.github.io/index_images/Climate_Change.jpg">
       <!-- Le styles -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
       <link href="css/theme.css" rel="stylesheet">
@@ -105,7 +106,7 @@
                </div>
 
 
-               <div class="span4 feature-item">
+               <div class="span4 feature-item" data-aos="fade-up">
                      <h5> <span class="date">August 21, 2026</span> </h5>
                      <h4 class="feature-heading">
                         <a style="text-align: justify;" href="https://tiar.centers.tsukuba.ac.jp/en/journal/1551/">
@@ -126,7 +127,7 @@
                      <br/>					
                </div>
 
-               <div class="span4 feature-item">
+               <div class="span4 feature-item" data-aos="fade-up" data-aos-delay="100">
                      <h5> <span class="date">August 15, 2025</span> </h5>
                      <h4 class="feature-heading">
                         <a style="text-align: justify;" href="https://www.griffith.edu.au/__data/assets/pdf_file/0035/2184965/2025-HEWS-Post-event-Notes.pdf">
@@ -147,7 +148,7 @@
                      <br/>					
                </div>
                
-               <div class="span4 feature-item">
+               <div class="span4 feature-item" data-aos="fade-up" data-aos-delay="200">
                   <h5> <span class="date"> October 8, 2024 </span> </h5>
                   <h4 class="feature-heading">
                      <a style="text-align: justify;" href="https://www.nikkei.com/article/DGXZQOSG18BEA0Y4A910C2000000/">
@@ -169,7 +170,7 @@
                
                <div class="clearfix"></div>
 
-               <div class="span4 feature-item">
+               <div class="span4 feature-item" data-aos="fade-up">
                   <h5> <span class="date">August 20, 2024</span> </h5>
                   <h4 class="feature-heading">
                      <a  style="text-align: justify;" href="https://www.eurekalert.org/news-releases/1055190">
@@ -225,5 +226,20 @@
       <script src="js/jquery-1.9.1.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script> $('#main-carousel').carousel(); </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+   <script>
+      AOS.init({ duration: 700, once: true, offset: 80 });
+      // ── Back to Top ──
+      (function(){
+         var btn = document.getElementById('back-to-top');
+         window.addEventListener('scroll', function(){
+            btn.style.display = window.pageYOffset > 300 ? 'flex' : 'none';
+         });
+         btn.addEventListener('click', function(e){
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+         });
+      })();
+   </script>
    </body>
 </html>
